@@ -6,5 +6,8 @@ from fabric import task
 def uptime(c):
     c.run('uptime')
 
+@task
+def free(c):
+    c.run('free')
 
 

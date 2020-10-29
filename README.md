@@ -18,14 +18,30 @@ sudo pip3 install fabric
 To list all known tasks run:
 
 ```bash
-fab -l
+$ fab -l
+Available tasks:
+
+  debian-all-upgrade
+  debian-update
+  free
 ```
 
-To run `uptime` tasks on this host, use:
+NOTE: `fab` replaces function's underscores `_` with dashes `-`.
+
+To run `uptime` task directly on this host, use:
 
 ```bash
 fab uptime
 ```
 
+More realistic example:
+```bash
+fab -H my-debian-host debian-update
+```
 
-TODO: ...
+WARNING! Fab will use SSH connection (or `~/.ssh/config`) to resolve
+`my-debian-host`. If there is prompt for any password (user's password or ssh
+key password) you must use correct argument to `fab` or run `ssh-agent`.
+
+
+
